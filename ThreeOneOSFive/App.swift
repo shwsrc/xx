@@ -30,12 +30,8 @@ struct ThreeOneOSFiveApp: App {
     var body: some Scene {
         WindowGroup {
             Group {
-                if licenseManager.isActive {
-                    ContentView()
-                        .environmentObject(licenseManager)
-                } else {
-                    LicenseActivationView(manager: licenseManager)
-                }
+                ContentView()
+                    .environmentObject(licenseManager)
             }
                 .environmentObject(appState)
                 .environmentObject(patchDraftCoordinator)
